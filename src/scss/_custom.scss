@@ -1,0 +1,238 @@
+.ant-btn-icon-only.ant-btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 4.9px 0;
+    font-size: 18px;
+    border: 1px solid #E4E9F2 !important;
+    border-radius: 10px;
+
+}
+
+.ant-btn-dangerous.ant-btn-text {
+    width: 202px;
+    height: 50px;
+    color: #A92928;
+    background: #f6e9e9;
+    box-shadow: none;
+    border-radius: 10px;
+}
+
+/* --------- cancel button ---------- */
+.ant-btn-default {
+    width: 120px;
+    height: 50px;
+    border-radius: 10px;
+    background: transparent;
+
+}
+
+.ant-btn-default:hover {
+    color: #FFFFFF;
+    background: #afafaf;
+    border-color: transparent;
+}
+
+.ant-btn-default:focus {
+    color: #FFFFFF;
+    background: #232530;
+    border-color: transparent;
+}
+/* --------- end cancel button ---------- */
+
+/* --------- search and save button ---------- */
+
+.ant-btn.ant-btn-primary {
+    width: 120px;
+    height: 50px;
+    border-radius: 10px;
+    color: #A92928;
+    border-color: #A92928;
+    background: transparent;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+}
+.ant-btn.ant-btn-primary:hover {
+    color: #FFFFFF;
+    background: #A92928;
+    border-color: #A92928;;
+}
+
+/* --------- end search button ---------- */
+
+/* ---------------- button --------------- */
+.ant-btn.ant-btn-background-ghost {
+    color: #A92928;
+    background: #FFFFFF;
+    border-color: transparent;
+}
+
+.ant-btn.ant-btn-background-ghost:hover {
+    color: #FFFFFF;
+    background: #A92928;
+    border-color: #A92928;;
+}
+
+.ant-btn.ant-btn-background-ghost:focus {
+    color: #FFFFFF;
+    background: #A92928;
+    border-color: #A92928;
+}
+
+.ant-card-bordered {
+    border-radius: 10px;
+    border: 1px solid #E6E9EF;
+}
+
+/* ----------- end button --------- */
+
+/* --------- sidebar ---------- */
+.sidebar-brand {
+    display: flex;
+    flex: 0 0 4rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--cui-sidebar-brand-color, rgba(255, 255, 255, 0.87));
+    background:#FFFFFF;
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    flex: 1 1;
+    align-items: center;
+    padding: 0.8445rem 1rem;
+    color: #7B7B7B;
+    text-decoration: none;
+    white-space: nowrap;
+    background: #FFFFFF;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-nav .nav-link:hover {
+    color:#7B7B7B;
+    text-decoration: none;
+    background: var(--cui-sidebar-nav-link-hover-bg, rgba(255, 255, 255, 1));
+}
+
+.sidebar-nav .nav-link:hover .nav-icon {
+    color: #7B7B7B;
+}
+
+.sidebar-nav .nav-link.active {
+    color: #FFFFFF;
+    background: #A92928;
+}
+
+.sidebar-nav .nav-link.active .nav-icon {
+    color: var(--cui-sidebar-nav-link-active-icon-color, rgb(255, 255, 255));
+}
+
+.sidebar-nav .nav-icon {
+    flex: 0 0 4rem;
+    height: 1.25rem;
+    font-size: 1.25rem;
+    color:#7B7B7B;
+    text-align: center;
+    fill: currentColor;
+    transition: inherit;
+}
+/* --------- end sidebar ---------- */
+
+/* .a {
+    width: 100%;
+    background:#a13f3f;
+}
+ */
+.ant-card.red {
+    height: 165px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    position: relative;
+    background: transparent linear-gradient(115deg, var(--unnamed-color-a92928) 0%, #962423 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(115deg, #A92928 0%, #962423 100%) 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+}
+
+.ant-card.purple {
+    height: 165px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    position: relative;
+    background: transparent linear-gradient(115deg, #8660BF 0%, #5345B1 100%) 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+
+}
+
+.ant-card.blue {
+    height: 165px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    position: relative;
+    background: transparent linear-gradient(115deg, #46C4F2 0%, #6691D9 100%) 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+}
+
+.ant-card.orange {
+    height: 165px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    position: relative;
+    background: transparent linear-gradient(246deg, #FDB62A 0%, #F57E5A 100%) 0% 0% no-repeat padding-box;
+    border: 0.25px solid #E4E4E4;
+    border-radius: 10px;
+}
+
+p.text-white-dashborad {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.ant-layout-footer {
+    background: #ffffff;
+}
+
+/* .ant-input {
+    height: 57px;
+    border: 1px solid #E4E9F2;
+    border-radius: 10px;
+} */
+
+
+/* .ant-table-thead > tr > th {
+    position: relative;
+    color: #FFFFFF;
+    font-weight: 500;
+    text-align: left;
+    background: #2F3A4D;
+    border-bottom: 1px solid #fffdfd;
+    transition: background 0.3s ease;
+}
+ */
