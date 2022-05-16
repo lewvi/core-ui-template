@@ -156,7 +156,7 @@ class Member extends React.Component {
                   </Form.Item>
                 </Col>
                 <Col span={6}>
-                  <Row gutter={[16, 16]} justify='end'>
+                  <Row gutter={[16, 16]} justify="end">
                     <Col>
                       <Button>Cancel</Button>
                     </Col>
@@ -171,16 +171,19 @@ class Member extends React.Component {
         </Form>
 
         <CCard>
-          <Row>
-            <Col span={8}>
-              <h6 id="traffic" className="card-title mb-0">
-                Member List
-              </h6>
-            </Col>
-            <Col span={16}></Col>
-          </Row>
-
-          <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+          <CCardBody>
+            <Row>
+                <h6 id="traffic" className="card-title mb-0">
+                  Member List
+                </h6>
+            </Row>
+            <br></br>
+            <Row>
+              <Col span={24}>
+                <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+              </Col>
+            </Row> 
+          </CCardBody>
         </CCard>
       </>
     )
