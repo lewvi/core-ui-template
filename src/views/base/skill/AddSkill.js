@@ -24,37 +24,44 @@ class AddSkill extends React.Component {
 
         <Form layout="vertical">
           <CCard>
-            <Row>
-              <CCardBody>
-                <h6 id="traffic" className="card-title mb-0">
-                  Type
-                </h6>
-              </CCardBody>
-            </Row>
-            <Row gutter={16} justify="center">
-              <Col span={6} />
-              <Col span={6}>
-                <Form.Item label="Name">
-                  <Input />
-                </Form.Item>
-              </Col>
-              <Col span={6}>
-                <Form.Item label="Number Of People">
-                  <Input />
-                </Form.Item>
-              </Col>
-              <Col span={6} />
-            </Row>
-            <Footer>
-              <Row gutter={[16, 16]} justify="end">
+            <CCardBody>
+              <Row>
                 <Col>
-                  <Button>Cancel</Button>
-                </Col>
-                <Col>
-                  <Button type="primary">Save</Button>
+                  <h6 id="traffic" className="card-title mb-0">
+                    Type
+                  </h6>
                 </Col>
               </Row>
-            </Footer>
+
+              <Row justify="center">
+                <Col span={16}>
+                  <Row gutter={16}>
+                    <Col span={12}>
+                      <Form.Item label="Name">
+                        <Input />
+                      </Form.Item>
+                    </Col>
+                    <Col span={12}>
+                      <Form.Item label="Number Of People">
+                        <Input />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+
+                  <Row gutter={16} justify='end'>
+                    <Col>
+                      <Button>Cancel</Button>
+                    </Col>
+                    <Col>
+                      <Button type="primary">Save</Button>
+                    </Col>
+                  </Row>
+
+                  <Footer/>
+
+                </Col>
+              </Row>
+            </CCardBody>
           </CCard>
         </Form>
       </>

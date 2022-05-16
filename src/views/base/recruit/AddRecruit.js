@@ -2,31 +2,11 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useState, createRef } from 'react'
 import classNames from 'classnames'
 import { CCard, CCardBody } from '@coreui/react'
-import { Table } from 'antd'
-import { Button, Input, Form, Row, Col, DatePicker, Space, Upload, message } from 'antd'
-import { FormOutlined, InboxOutlined } from '@ant-design/icons'
+import { Button, Input, Form, Row, Col, DatePicker, Upload,TimePicker } from 'antd'
+import { FormOutlined, InboxOutlined,LinkOutlined } from '@ant-design/icons'
+import { Footer } from 'antd/lib/layout/layout'
 
-const { Dragger } = Upload
-
-const props = {
-  name: 'file',
-  multiple: true,
-  action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-  onChange(info) {
-    const { status } = info.file
-    if (status !== 'uploading') {
-      console.log(info.file, info.fileList)
-    }
-    if (status === 'done') {
-      message.success(`${info.file.name} file uploaded successfully.`)
-    } else if (status === 'error') {
-      message.error(`${info.file.name} file upload failed.`)
-    }
-  },
-  onDrop(e) {
-    console.log('Dropped files', e.dataTransfer.files)
-  },
-}
+const { Dragger } = Upload;
 
 class AddRecruit extends React.Component {
   render() {
@@ -61,50 +41,72 @@ class AddRecruit extends React.Component {
                 </Col>
               </Row>
 
-              <Row>
-                <Col span={8}></Col>
+              <Row justify="center">
                 <Col span={20}>
-                  <Row gutter={16}>
+                  <Row gutter={[16, 16]}>
                     <Col span={8}>
                       <Form.Item label="หัวข้อ">
-                        <Input />
+                        <Input placeholder="รับสมัครงาน" />
                       </Form.Item>
                     </Col>
                     <Col span={8}>
                       <Form.Item label="Time">
-                        <Input />
+                        <TimePicker placeholder="Time" style={{ width: '100%' }} />
                       </Form.Item>
                     </Col>
                     <Col span={8}>
                       <Form.Item label="Schedule">
-                        <DatePicker />
+                        <DatePicker placeholder="Schedule" style={{ width: '100%' }} />
                       </Form.Item>
                     </Col>
                   </Row>
-                </Col>
-                <Col span={2}></Col>
 
-                <Col span={24}>
+                  <Row>
+                    <Col span={24}>
+                      <Form.Item label="เพิ่มรูปภาพหน้าปก">
+                        <Dragger>
+                          <p className="ant-upload-drag-icon">
+                            <InboxOutlined />
+                          </p>
+                          <p className="ant-upload-text">
+                            Click or drag file to this area to upload
+                          </p>
+                        </Dragger>
+                      </Form.Item>
+                    </Col>
+                  </Row>
 
                   <Row gutter={16}>
                     <Col span={12}>
                       <Form.Item label="เพิ่มไฟล์รูปภาพ">
-                        <Input />
+                        <Input placeholder="เพิ่มไฟล์รูปภาพ" />
                       </Form.Item>
                     </Col>
                     <Col span={12}>
                       <Form.Item label="เพิ่มไฟล์วิดีโอ">
-                        <Input />
+                        <Input placeholder="เพิ่มไฟล์วิดีโอ" suffix={<LinkOutlined />}/>
                       </Form.Item>
                     </Col>
                   </Row>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Form.Item label="รายละเอียด">
-                    <Input />
-                  </Form.Item>
+
+                  <Row>
+                    <Col span={24}>
+                      <Form.Item label="รายละเอียด">
+                        <Input style={{ height: '192px' }} />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+
+                  <Row gutter={16} justify='end'>
+                    <Col>
+                      <Button>Cancel</Button>
+                    </Col>
+                    <Col>
+                      <Button type="primary">Save</Button>
+                    </Col>
+                  </Row>
+
+                  <Footer/>
                 </Col>
               </Row>
             </CCardBody>

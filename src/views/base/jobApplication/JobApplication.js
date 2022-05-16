@@ -5,7 +5,7 @@ import { CCard, CCardBody } from '@coreui/react'
 import { Table } from 'antd'
 import { Button, Input, Form, Select, Pagination, Row, Col, Space,Badge } from 'antd'
 import { FilePdfOutlined, FileExcelOutlined, DeleteOutlined,FormOutlined  } from '@ant-design/icons';
-
+import {Link } from "react-router-dom";
 
 const columns = [
   {
@@ -86,16 +86,16 @@ class JobApplication extends React.Component {
     return (
       <>
         <CCard>
-          <Row justify="space-between">
-            <Col span={8}>
-              <CCardBody>
-                <h4 id="traffic" className="card-title mb-0">Job Application</h4>
+          <CCardBody>
+            <Row>
+              <Col span={8}>
+                <h4 id="traffic" className="card-title mb-0">
+                  Job Application
+                </h4>
                 <div className="small text-medium-emphasis">Job Application</div>
-              </CCardBody>
-            </Col>
-            <Col span={16}>
-              <CCardBody>
-                <Row gutter={[16,16]} justify="end">
+              </Col>
+              <Col span={16}>
+                <Row gutter={[16, 16]} justify="end">
                   <Col>
                     <Button icon={<DeleteOutlined />} size="large" />
                   </Col>
@@ -106,40 +106,36 @@ class JobApplication extends React.Component {
                     <Button icon={<FilePdfOutlined />} size="large" />
                   </Col>
                   <Col>
-                    <Button type="text" danger size="large">+ Job Application</Button>
+                    <Link to="/base/AddjobApplication">
+                      <Button type="text" danger size="large">
+                        + Job Application
+                      </Button>
+                    </Link>
                   </Col>
                 </Row>
-              </CCardBody>
-            </Col>
-          </Row>
-        </CCard>
-        <CCard className="mb-4">
-          <Form layout="vertical">
-            <Row>
-              <Col span={6}>
-                <CCardBody>
-                  <Form.Item label="List Name">
-                    <Input placeholder='List Name' />
-                  </Form.Item>
-                </CCardBody>
               </Col>
-              <Col span={6}>
-                <CCardBody>
-                  <Form.Item label='Status'>
-                    <Select placeholder='Status'>
+            </Row>
+          </CCardBody>
+        </CCard>
+
+        <Form layout="vertical">
+          <CCard className="mb-4">
+            <CCardBody>
+              <Row gutter={16}>
+                <Col span={6}>
+                  <Form.Item label="List Name">
+                    <Input placeholder="List Name" />
+                  </Form.Item>
+                </Col>
+                <Col span={6}>
+                  <Form.Item label="Status">
+                    <Select placeholder="Status">
                       {/* <Select.Option value="demo">Demo</Select.Option> */}
                     </Select>
                   </Form.Item>
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
-
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
-                  <Row gutter={[16, 16]}>
+                </Col>
+                <Col span={12}>
+                  <Row gutter={[16, 16]} justify="end">
                     <Col>
                       <Button>Cancel</Button>
                     </Col>
@@ -147,31 +143,26 @@ class JobApplication extends React.Component {
                       <Button type="primary">Search</Button>
                     </Col>
                   </Row>
-                </CCardBody>
+                </Col>
+              </Row>
+            </CCardBody>
+            <Row></Row>
+          </CCard>
+        </Form>
+
+        <CCard className="mb-4">
+          <CCardBody>
+            <Row>
+              <h6 id="traffic" className="card-title mb-0">
+                  Job Application List
+              </h6>
+            </Row>
+            <br></br>
+            <Row>
+              <Col span={24}>
+                <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
               </Col>
             </Row>
-          </Form>
-        </CCard>
-        <CCard className="mb-4">
-          <Row>
-            <Col span={8}>
-              <CCardBody>
-                <h6 id="traffic" className="card-title mb-0">Job Application List</h6>
-              </CCardBody>
-            </Col>
-            <Col span={16}>
-              <CCardBody>
-                <Row justify="end">
-
-                </Row>
-              </CCardBody>
-            </Col>
-          </Row>
-          <CCardBody>
-            <Table
-              rowSelection={rowSelection}
-              columns={columns}
-              dataSource={data} />
           </CCardBody>
         </CCard>
       </>

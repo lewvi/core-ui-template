@@ -13,6 +13,8 @@ const AddRecruit = React.lazy(() => import('./views/base/recruit/AddRecruit'))
 const Skill = React.lazy(() => import('./views/base/skill/Skill'))
 const AddSkill = React.lazy(() => import('./views/base/skill/AddSkill'))
 const jobApplication = React.lazy(() => import('./views/base/jobApplication/JobApplication'))
+const AddjobApplication = React.lazy(() => import('./views/base/jobApplication/AddJobApplication'))
+//const Document = React.lazy(() => import('./views/base/document/Document'))
 const Document = React.lazy(() => import('./views/base/document/Document'))
 const Hospital = React.lazy(() => import('./views/base/hospital/Hospital'))
 const Welfare = React.lazy(() => import('./views/base/welfare/Welfare'))
@@ -73,6 +75,7 @@ const routes = [
   { path: '/base/recruit', name: 'Recruit', element: Recruit},
   { path: '/base/recruit/AddRecruit', name: 'Add Recruit', element: AddRecruit},
   { path: '/base/jobApplication', name: 'Job application', element: jobApplication },
+  { path: '/base/AddjobApplication', name: 'Add Job application', element: AddjobApplication },
   { path: '/base/document', name: 'Document', element: Document },
   { path: '/base/hospital', name: 'Hospital', element: Hospital },
   { path: '/base/welfare', name: 'Welfare', element: Welfare },

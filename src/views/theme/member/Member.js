@@ -12,7 +12,7 @@ import {
   UserOutlined,
 } from '@ant-design/icons'
 
-import {Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 const columns = [
   {
@@ -67,7 +67,6 @@ for (let i = 1; i <= 50; i++) {
   })
 }
 
-
 class Member extends React.Component {
   state = {
     selectedRowKeys: [],
@@ -94,7 +93,6 @@ class Member extends React.Component {
     const rowSelection = {
       selectedRowKeys,
       onChange: this.onSelectChange,
-      
     }
     const handleClick = () => {
       //navigation('/')
@@ -102,19 +100,17 @@ class Member extends React.Component {
     }
 
     return (
-      <div>
+      <>
         <CCard>
-          <Row justify="space-between">
-            <Col span={8}>
-              <CCardBody>
+          <CCardBody>
+            <Row justify="space-between">
+              <Col span={8}>
                 <h4 id="traffic" className="card-title mb-0">
                   Member
                 </h4>
                 <div className="small text-medium-emphasis">Member</div>
-              </CCardBody>
-            </Col>
-            <Col span={16}>
-              <CCardBody>
+              </Col>
+              <Col span={16}>
                 <Row gutter={[16, 16]} justify="end">
                   <Col>
                     <Button icon={<DeleteOutlined />} size="large" />
@@ -126,47 +122,41 @@ class Member extends React.Component {
                     <Button icon={<FilePdfOutlined />} size="large" />
                   </Col>
                   <Col>
-                  <Link to='/theme/member/AddMember'>
+                    <Link to="/theme/member/AddMember">
                       <Button type="text" danger size="large">
                         + Member
                       </Button>
-                  </Link>
+                    </Link>
                   </Col>
                 </Row>
-              </CCardBody>
-            </Col>
-          </Row>
+              </Col>
+            </Row>
+          </CCardBody>
         </CCard>
 
-        <CCard className="mb-4">
-          <Form layout="vertical">
-            <Row>
-              <Col span={6}>
-                <CCardBody>
+        <Form layout="vertical">
+          <CCard className="mb-4">
+            <CCardBody>
+              <Row gutter={16}>
+                <Col span={6}>
                   <Form.Item label="Name">
                     <Input placeholder="Name" />
                   </Form.Item>
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
+                </Col>
+                <Col span={6}>
                   <Form.Item label="ID">
                     <Input placeholder="ID" />
                   </Form.Item>
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
+                </Col>
+                <Col span={6}>
                   <Form.Item label="Status">
                     <Select placeholder="Status">
                       {/* <Select.Option value="demo">Demo</Select.Option> */}
                     </Select>
                   </Form.Item>
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
-                  <Row gutter={[16, 16]}>
+                </Col>
+                <Col span={6}>
+                  <Row gutter={[16, 16]} justify='end'>
                     <Col>
                       <Button>Cancel</Button>
                     </Col>
@@ -174,39 +164,25 @@ class Member extends React.Component {
                       <Button type="primary">Search</Button>
                     </Col>
                   </Row>
-                </CCardBody>
-              </Col>
-            </Row>
-          </Form>
-        </CCard>
+                </Col>
+              </Row>
+            </CCardBody>
+          </CCard>
+        </Form>
 
-        <CCard className="mb-4">
+        <CCard>
           <Row>
             <Col span={8}>
-              <CCardBody>
-                <h6 id="traffic" className="card-title mb-0">
-                  Member List
-                </h6>
-              </CCardBody>
+              <h6 id="traffic" className="card-title mb-0">
+                Member List
+              </h6>
             </Col>
-            <Col span={16}>
-              <CCardBody>
-                <Row justify="end">
-                  {/*                  <Pagination
-                    pagination={{ position: [this.state.top] }}
-                    total={100}
-                    showTotal={total => `Total ${total} items`}
-                    defaultPageSize={20}
-                    defaultCurrent={1} /> */}
-                </Row>
-              </CCardBody>
-            </Col>
+            <Col span={16}></Col>
           </Row>
-          <CCardBody>
-            <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
-          </CCardBody>
+
+          <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
         </CCard>
-      </div>
+      </>
     )
   }
 }

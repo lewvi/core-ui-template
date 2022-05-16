@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useState, createRef } from 'react'
 import classNames from 'classnames'
-import { CCard, CCardBody} from '@coreui/react'
+import { CCard, CCardBody } from '@coreui/react'
 import { Table } from 'antd'
-import { Button, Input, Form, Row, Col, DatePicker,Space } from 'antd'
-import {DeleteOutlined,FormOutlined } from '@ant-design/icons';
-import {Link } from "react-router-dom";
+import { Button, Input, Form, Row, Col, DatePicker, Space } from 'antd'
+import { DeleteOutlined, FormOutlined } from '@ant-design/icons'
+import { Link } from 'react-router-dom'
 
 const columns = [
   {
@@ -23,11 +23,11 @@ const columns = [
   {
     title: 'Schedule',
     dataIndex: 'schedule',
-    render : () => (
+    render: () => (
       <div>
         <a>08:30 PM, May 2,2022</a>
       </div>
-    )
+    ),
   },
   {
     title: 'Employer type',
@@ -36,12 +36,12 @@ const columns = [
   {
     title: 'Action',
     dataIndex: 'action',
-    render: () => ( 
+    render: () => (
       <Space size="middle">
         <a>{<FormOutlined />}</a>
         <a>{<DeleteOutlined />}</a>
       </Space>
-    )
+    ),
   },
 ]
 
@@ -50,9 +50,9 @@ for (let i = 1; i <= 50; i++) {
   data.push({
     key: i,
     No: ` ${i}`,
-    list:`รับสมัครงาน ${i}`,
-    quantity:` Quantity : ${i}`,
-    employerType:`Employer type : ${i}`,
+    list: `รับสมัครงาน ${i}`,
+    quantity: ` Quantity : ${i}`,
+    employerType: `Employer type : ${i}`,
   })
 }
 
@@ -85,19 +85,17 @@ class Recruit extends React.Component {
       onChange: this.onSelectChange,
     }
     return (
-      <div>
+      <>
         <CCard>
-          <Row justify="space-between">
-            <Col span={8}>
-              <CCardBody>
+          <CCardBody>
+            <Row>
+              <Col span={8}>
                 <h4 id="traffic" className="card-title mb-0">
                   Recruit
                 </h4>
                 <div className="small text-medium-emphasis">Recruit</div>
-              </CCardBody>
-            </Col>
-            <Col span={16}>
-              <CCardBody>
+              </Col>
+              <Col span={16}>
                 <Row gutter={16} justify="end">
                   <Col>
                     <Link to="/base/recruit/AddRecruit">
@@ -107,34 +105,27 @@ class Recruit extends React.Component {
                     </Link>
                   </Col>
                 </Row>
-              </CCardBody>
-            </Col>
-          </Row>
+              </Col>
+            </Row>
+          </CCardBody>
         </CCard>
 
-        <CCard className="mb-4">
-          <Form layout="vertical">
-            <Row>
-              <Col span={6}>
-                <CCardBody>
+        <Form layout="vertical">
+          <CCard className="mb-4">
+            <CCardBody>
+              <Row gutter={16}>
+                <Col span={6}>
                   <Form.Item label="List Name">
                     <Input placeholder="List Name" />
                   </Form.Item>
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
-                  <Form.Item name="Schedule" label="Schedule">
+                </Col>
+                <Col span={6}>
+                  <Form.Item label="Schedule">
                     <DatePicker />
                   </Form.Item>
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody></CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
-                  <Row gutter={[16, 16]}>
+                </Col>
+                <Col span={12}>
+                  <Row gutter={[16, 16]} justify="end">
                     <Col>
                       <Button>Cancel</Button>
                     </Col>
@@ -142,32 +133,28 @@ class Recruit extends React.Component {
                       <Button type="primary">Search</Button>
                     </Col>
                   </Row>
-                </CCardBody>
+                </Col>
+              </Row>
+            </CCardBody>
+          </CCard>
+        </Form>
+
+        <CCard>
+          <CCardBody>
+            <Row>
+              <h6 id="traffic" className="card-title mb-0">
+                Recruit List
+              </h6>
+            </Row>
+            <br></br>
+            <Row>
+              <Col span={24}>
+                <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
               </Col>
             </Row>
-          </Form>
-        </CCard>
-
-        <CCard className="mb-4">
-          <Row>
-            <Col span={8}>
-              <CCardBody>
-                <h6 id="traffic" className="card-title mb-0">
-                  Recruit List
-                </h6>
-              </CCardBody>
-            </Col>
-            <Col span={16}>
-              <CCardBody>
-                <Row justify="end"></Row>
-              </CCardBody>
-            </Col>
-          </Row>
-          <CCardBody>
-            <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
           </CCardBody>
         </CCard>
-      </div>
+      </>
     )
   }
 }
