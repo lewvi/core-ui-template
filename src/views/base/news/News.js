@@ -5,7 +5,7 @@ import { CCard, CCardBody} from '@coreui/react'
 import { Table } from 'antd'
 import { Button, Input, Form,Pagination, Row, Col,Space,Avatar } from 'antd'
 import { DeleteOutlined,FormOutlined } from '@ant-design/icons';
-
+import { Link } from 'react-router-dom'
 
 const columns = [
   {
@@ -76,45 +76,41 @@ class News extends React.Component {
     return (
       <>
         <CCard>
-          <Row justify="space-between">
-            <Col span={8}>
-              <CCardBody>
-                <h4 id="traffic" className="card-title mb-0">News</h4>
+          <CCardBody>
+            <Row>
+              <Col span={8}>
+                <h4 id="traffic" className="card-title mb-0">
+                  News
+                </h4>
                 <div className="small text-medium-emphasis">News</div>
-              </CCardBody>
-            </Col>
-            <Col span={16}>
-              <CCardBody>
-                <Row gutter={[16,16]} justify="end">
+              </Col>
+              <Col span={16}>
+                <Row gutter={[16, 16]} justify="end">
                   <Col>
                     <Button icon={<DeleteOutlined />} size="large" />
                   </Col>
                   <Col>
-                    <Button type="text" danger size="large">+ News</Button>
+                    <Button type="text" danger size="large">
+                      + News
+                    </Button>
                   </Col>
                 </Row>
-              </CCardBody>
-            </Col>
-          </Row>
+              </Col>
+            </Row>
+          </CCardBody>
         </CCard>
-        <CCard className="mb-4">
-          <Form layout="vertical">
-            <Row>
-              <Col span={8}>
-                <CCardBody>
-                  <Form.Item label="News name">
-                    <Input placeholder='News name' />
-                  </Form.Item>
-                </CCardBody>
-              </Col>
-              <Col span={8}>
-                <CCardBody>
 
-                </CCardBody>
-              </Col>
-              <Col span={8}>
-                <CCardBody>
-                  <Row gutter={[16, 16]}>
+        <Form layout="vertical">
+          <CCard className="mb-4">
+            <CCardBody>
+              <Row>
+                <Col span={8}>
+                  <Form.Item label="News name">
+                    <Input placeholder="News name" />
+                  </Form.Item>
+                </Col>
+                <Col span={16}>
+                  <Row gutter={[16, 16]} justify="end">
                     <Col>
                       <Button>Cancel</Button>
                     </Col>
@@ -122,33 +118,25 @@ class News extends React.Component {
                       <Button type="primary">Search</Button>
                     </Col>
                   </Row>
-                </CCardBody>
+                </Col>
+              </Row>
+            </CCardBody>
+          </CCard>
+        </Form>
+
+        <CCard>
+          <CCardBody>
+            <Row>
+              <h6 id="traffic" className="card-title mb-0">
+                News List
+              </h6>
+            </Row>
+            <br></br>
+            <Row>
+              <Col span={24}>
+                <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
               </Col>
             </Row>
-          </Form>
-        </CCard>
-
-        <CCard className="mb-4">
-          <Row /* justify="space-between" */>
-            <Col span={8}>
-              <CCardBody>
-                <h6 id="traffic" className="card-title mb-0">News List</h6>
-              </CCardBody>
-            </Col>
-            <Col span={16}>
-              <CCardBody>
-                <Row justify="end">
-
-                </Row>
-              </CCardBody>
-            </Col>
-          </Row>
-          <CCardBody>
-            <Table
-              /*  pagination={{ position: [this.state.top] }} */
-              rowSelection={rowSelection}
-              columns={columns}
-              dataSource={data} />
           </CCardBody>
         </CCard>
       </>

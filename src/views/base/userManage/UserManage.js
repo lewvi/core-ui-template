@@ -5,7 +5,7 @@ import { CCard, CCardBody} from '@coreui/react'
 import { Table } from 'antd'
 import { Button, Input, Form, Select, Pagination, Row, Col,Space,Badge } from 'antd'
 import { FileExcelOutlined, DeleteOutlined,FormOutlined } from '@ant-design/icons';
-
+import { Link } from 'react-router-dom'
 
 const columns = [
   {
@@ -81,16 +81,16 @@ class UserManage extends React.Component {
     return (
       <>
         <CCard>
-          <Row justify="space-between">
-            <Col span={8}>
-              <CCardBody>
-                <h4 id="traffic" className="card-title mb-0">User Manage</h4>
+          <CCardBody>
+            <Row>
+              <Col span={8}>
+                <h4 id="traffic" className="card-title mb-0">
+                  User Manage
+                </h4>
                 <div className="small text-medium-emphasis">User Manage</div>
-              </CCardBody>
-            </Col>
-            <Col span={16}>
-              <CCardBody>
-                <Row gutter={[16,16]} justify="end">
+              </Col>
+              <Col span={16}>
+                <Row gutter={[16, 16]} justify="end">
                   <Col>
                     <Button icon={<DeleteOutlined />} size="large" />
                   </Col>
@@ -98,40 +98,36 @@ class UserManage extends React.Component {
                     <Button icon={<FileExcelOutlined />} size="large" />
                   </Col>
                   <Col>
-                    <Button type="text" danger size="large">+ User Manage</Button>
+                    <Link to="#">
+                      <Button type="text" danger size="large">
+                        + User Manage
+                      </Button>
+                    </Link>
                   </Col>
                 </Row>
-              </CCardBody>
-            </Col>
-          </Row>
+              </Col>
+            </Row>
+          </CCardBody>
         </CCard>
-        <CCard className="mb-4">
-          <Form layout="vertical">
-            <Row>
-              <Col span={6}>
-                <CCardBody>
-                  <Form.Item label="User ID">
-                    <Input placeholder='User ID' />
-                  </Form.Item>
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
+
+        <Form layout="vertical">
+          <CCard className="mb-4">
+            <CCardBody>
+              <Row gutter={16}>
+                <Col span={6}>
                   <Form.Item label="Name">
-                    <Input placeholder='Name' />
+                    <Input placeholder="Name" />
                   </Form.Item>
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
+                </Col>
+                <Col span={6}>
                   <Form.Item label="Status">
-                    <Select placeholder='Status' />
+                    <Select placeholder="Status">
+                      {/* <Select.Option value="demo">Demo</Select.Option> */}
+                    </Select>
                   </Form.Item>
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
-                  <Row gutter={[16, 16]}>
+                </Col>
+                <Col span={12}>
+                  <Row gutter={[16, 16]} justify="end">
                     <Col>
                       <Button>Cancel</Button>
                     </Col>
@@ -139,32 +135,25 @@ class UserManage extends React.Component {
                       <Button type="primary">Search</Button>
                     </Col>
                   </Row>
-                </CCardBody>
-              </Col>
-            </Row>
-          </Form>
-        </CCard>
+                </Col>
+              </Row>
+            </CCardBody>
+          </CCard>
+        </Form>
 
-        <CCard className="mb-4">
-          <Row>
-            <Col span={8}>
-              <CCardBody>
-                <h6 id="traffic" className="card-title mb-0">User Manage List</h6>
-              </CCardBody>
-            </Col>
-            <Col span={16}>
-              <CCardBody>
-                <Row justify="end">
-
-                </Row>
-              </CCardBody>
-            </Col>
-          </Row>
+        <CCard>
           <CCardBody>
-            <Table
-              rowSelection={rowSelection}
-              columns={columns}
-              dataSource={data} />
+            <Row>
+                <h6 id="traffic" className="card-title mb-0">
+                  User Manage List
+                </h6>
+            </Row>
+            <br></br>
+            <Row>
+              <Col span={24}>
+                <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+              </Col>
+            </Row> 
           </CCardBody>
         </CCard>
       </>

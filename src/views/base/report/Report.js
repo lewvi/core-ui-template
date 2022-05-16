@@ -120,15 +120,15 @@ class Report extends React.Component {
     return (
       <div>
         <CCard>
-          <Row justify="space-between">
-            <Col span={8}>
-              <CCardBody>
-                <h4 id="traffic" className="card-title mb-0">Report</h4>
+          <CCardBody>
+            <Row>
+              <Col span={8}>
+                <h4 id="traffic" className="card-title mb-0">
+                  Report
+                </h4>
                 <div className="small text-medium-emphasis">Report</div>
-              </CCardBody>
-            </Col>
-            <Col span={16}>
-              <CCardBody>
+              </Col>
+              <Col span={16}>
                 <Row gutter={16} justify="end">
                   <Col>
                     <Button icon={<FileExcelOutlined />} size="large" />
@@ -137,9 +137,9 @@ class Report extends React.Component {
                     <Button icon={<FilePdfOutlined />} size="large" />
                   </Col>
                 </Row>
-              </CCardBody>
-            </Col>
-          </Row>
+              </Col>
+            </Row>
+          </CCardBody>
         </CCard>
 
         <CCard>
@@ -167,12 +167,12 @@ class Report extends React.Component {
               <Col span={10}>
                 <Card>
                   <p>จำนวนโดยแยกประเภท</p>
-                  <Row gutter={[16,16]}>
+                  <Row gutter={[16, 16]}>
                     <Col span={12}>
-                      <Statistic title="ผู้พ้นโทษ (Ex-convicts)" value={50000}  />
+                      <Statistic title="ผู้พ้นโทษ (Ex-convicts)" value={50000} />
                     </Col>
                     <Col span={12}>
-                      <Statistic title="ผู้พักการลงโทษ (Parole)" value={100000}  />
+                      <Statistic title="ผู้พักการลงโทษ (Parole)" value={100000} />
                     </Col>
                   </Row>
                 </Card>
@@ -184,10 +184,7 @@ class Report extends React.Component {
             </Row>
 
             <Card className="mb-4">
-              <Table
-                columns={columns_company}
-                dataSource={data} >
-              </Table>
+              <Table columns={columns_company} dataSource={data}></Table>
             </Card>
 
             <Row>
@@ -195,20 +192,30 @@ class Report extends React.Component {
             </Row>
 
             <Card className="mb-4">
-              <Table
-                columns={columns_member}
-                dataSource={data} >
-              </Table>
+              <Table columns={columns_member} dataSource={data}></Table>
             </Card>
 
-            <Card title='กราฟข้อมูลจำนวนสมาชิก'>
+            <Card title="กราฟข้อมูลจำนวนสมาชิก">
               <CChartLine
                 style={{ height: '300px', marginTop: '40px' }}
                 data={{
-                  labels: ["ม.ค", "ก.พ", "ก.พ", "ม.ย", "พ.ค", "มิ.ย", "ก.ค", "ส.ค", "ก.ย", "ต.ค", "พ.ย", "ธ.ค"],
+                  labels: [
+                    'ม.ค',
+                    'ก.พ',
+                    'ก.พ',
+                    'ม.ย',
+                    'พ.ค',
+                    'มิ.ย',
+                    'ก.ค',
+                    'ส.ค',
+                    'ก.ย',
+                    'ต.ค',
+                    'พ.ย',
+                    'ธ.ค',
+                  ],
                   datasets: [
                     {
-                      label: "My First dataset",
+                      label: 'My First dataset',
                       backgroundColor: hexToRgba(getStyle('--cui-info'), 10),
                       borderColor: getStyle('--cui-info'),
                       pointHoverBackgroundColor: getStyle('--cui-info'),
@@ -227,7 +234,7 @@ class Report extends React.Component {
                         random(50, 200),
                         random(50, 200),
                       ],
-                      fill: true
+                      fill: true,
                     },
                     {
                       label: 'My Second dataset',
@@ -252,7 +259,6 @@ class Report extends React.Component {
                     },
                   ],
                 }}
-
                 options={{
                   maintainAspectRatio: false,
                   plugins: {
@@ -287,8 +293,6 @@ class Report extends React.Component {
                     },
                   },
                 }}
-
-
               />
             </Card>
           </CCardBody>

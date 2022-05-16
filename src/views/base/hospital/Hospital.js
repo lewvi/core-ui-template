@@ -1,10 +1,18 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useState, createRef } from 'react'
 import classNames from 'classnames'
-import { CCard,CCardBody} from '@coreui/react'
+import { CCard, CCardBody } from '@coreui/react'
 import { Table } from 'antd'
-import { Button, Input, Form,Pagination, Row, Col, Avatar, Space } from 'antd'
-import { FilePdfOutlined, FileExcelOutlined, DeleteOutlined,UserOutlined,FormOutlined } from '@ant-design/icons';
+import { Button, Input, Form, Pagination, Row, Col, Avatar, Space } from 'antd'
+import {
+  FilePdfOutlined,
+  FileExcelOutlined,
+  DeleteOutlined,
+  UserOutlined,
+  FormOutlined,
+} from '@ant-design/icons'
+
+import { Link } from 'react-router-dom'
 
 const columns = [
   {
@@ -18,7 +26,7 @@ const columns = [
       <div>
         <Avatar size="large" icon={<UserOutlined />} />
       </div>
-    )
+    ),
   },
   {
     title: 'Hospital Name',
@@ -35,12 +43,12 @@ const columns = [
   {
     title: 'Action',
     dataIndex: 'action',
-    render: () => ( 
+    render: () => (
       <Space size="middle">
         <a>{<FormOutlined />}</a>
         <a>{<DeleteOutlined />}</a>
       </Space>
-    )
+    ),
   },
 ]
 
@@ -52,7 +60,7 @@ for (let i = 1; i <= 50; i++) {
     No: ` ${i}`,
     hospitalName: `Hospital Name :${i}`,
     id: `DOC0000${i}`,
-    quantity:`Quantity : ${i} :`
+    quantity: `Quantity : ${i} :`,
   })
 }
 
@@ -84,18 +92,18 @@ class Hospital extends React.Component {
       onChange: this.onSelectChange,
     }
     return (
-      <div>
+      <>
         <CCard>
-          <Row justify="space-between">
-            <Col span={8}>
-              <CCardBody>
-                <h4 id="traffic" className="card-title mb-0">Hospital</h4>
+          <CCardBody>
+            <Row justify="space-between">
+              <Col span={8}>
+                <h4 id="traffic" className="card-title mb-0">
+                  Hospital
+                </h4>
                 <div className="small text-medium-emphasis">Hospital</div>
-              </CCardBody>
-            </Col>
-            <Col span={16}>
-              <CCardBody>
-                <Row gutter={[16,16]} justify="end">
+              </Col>
+              <Col span={16}>
+                <Row gutter={[16, 16]} justify="end">
                   <Col>
                     <Button icon={<DeleteOutlined />} size="large" />
                   </Col>
@@ -106,39 +114,34 @@ class Hospital extends React.Component {
                     <Button icon={<FilePdfOutlined />} size="large" />
                   </Col>
                   <Col>
-                    <Button type="text" danger size="large">+ Hospital</Button>
+                    <Link to="#">
+                      <Button type="text" danger size="large">
+                        + Hospital
+                      </Button>
+                    </Link>
                   </Col>
                 </Row>
-              </CCardBody>
-            </Col>
-          </Row>
+              </Col>
+            </Row>
+          </CCardBody>
         </CCard>
 
-        <CCard className="mb-4">
-          <Form layout="vertical">
-            <Row>
-              <Col span={6}>
-                <CCardBody>
+        <Form layout="vertical">
+          <CCard className="mb-4">
+            <CCardBody>
+              <Row gutter={16}>
+                <Col span={6}>
                   <Form.Item label="Hospital Name">
-                    <Input placeholder='hospital name' />
+                    <Input placeholder="Hospital Name" />
                   </Form.Item>
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
+                </Col>
+                <Col span={6}>
                   <Form.Item label="ID">
-                    <Input placeholder='ID' />
+                    <Input placeholder="ID" />
                   </Form.Item>
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
-
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
-                  <Row gutter={[16, 16]}>
+                </Col>
+                <Col span={12}>
+                  <Row gutter={[16, 16]} justify="end">
                     <Col>
                       <Button>Cancel</Button>
                     </Col>
@@ -146,35 +149,28 @@ class Hospital extends React.Component {
                       <Button type="primary">Search</Button>
                     </Col>
                   </Row>
-                </CCardBody>
+                </Col>
+              </Row>
+            </CCardBody>
+          </CCard>
+        </Form>
+
+        <CCard>
+          <CCardBody>
+            <Row>
+              <h6 id="traffic" className="card-title mb-0">
+                Member List
+              </h6>
+            </Row>
+            <br></br>
+            <Row>
+              <Col span={24}>
+                <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
               </Col>
             </Row>
-          </Form>
-        </CCard>
-
-        <CCard className="mb-4">
-          <Row>
-            <Col span={8}>
-              <CCardBody>
-                <h6 id="traffic" className="card-title mb-0">Member List</h6>
-              </CCardBody>
-            </Col>
-            <Col span={16}>
-              <CCardBody>
-                <Row justify="end">
-
-                </Row>
-              </CCardBody>
-            </Col>
-          </Row>
-          <CCardBody>
-            <Table
-              rowSelection={rowSelection}
-              columns={columns}
-              dataSource={data} />
           </CCardBody>
         </CCard>
-      </div>
+      </>
     )
   }
 }

@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useState, createRef } from 'react'
 import classNames from 'classnames'
-import { CCard,CCardBody} from '@coreui/react'
+import { CCard, CCardBody } from '@coreui/react'
 import { Table } from 'antd'
-import { Button, Input, Form, Pagination, Row, Col,Space } from 'antd'
-import { FilePdfOutlined, FileExcelOutlined, DeleteOutlined,FormOutlined } from '@ant-design/icons';
-
+import { Button, Input, Form, Pagination, Row, Col, Space } from 'antd'
+import { FilePdfOutlined, FileExcelOutlined, DeleteOutlined, FormOutlined } from '@ant-design/icons'
+import { Link } from 'react-router-dom'
 
 const columns = [
   {
@@ -19,11 +19,11 @@ const columns = [
   {
     title: 'Schedule',
     dataIndex: 'schedule',
-    render : () => (
+    render: () => (
       <div>
         <a>08:30 PM, May 2,2022</a>
       </div>
-    )
+    ),
   },
   {
     title: 'Quantity',
@@ -32,19 +32,19 @@ const columns = [
   {
     title: 'Contact',
     dataIndex: 'contact',
-/*     render : () => {
+    /*     render : () => {
 
     } */
   },
   {
     title: 'Action',
     dataIndex: 'action',
-    render: () => ( 
+    render: () => (
       <Space size="middle">
         <a>{<FormOutlined />}</a>
         <a>{<DeleteOutlined />}</a>
       </Space>
-    )
+    ),
   },
 ]
 
@@ -54,7 +54,7 @@ for (let i = 1; i <= 50; i++) {
     key: i,
     No: ` ${i}`,
     name: `Name :${i}`,
-    quantity:` Quantity : ${i}`,
+    quantity: ` Quantity : ${i}`,
     contact: `02-967-2222`,
   })
 }
@@ -79,16 +79,16 @@ class Welfare extends React.Component {
     return (
       <>
         <CCard>
-          <Row justify="space-between">
-            <Col span={8}>
-              <CCardBody>
-                <h4 id="traffic" className="card-title mb-0">Welfare</h4>
+          <CCardBody>
+            <Row>
+              <Col span={8}>
+                <h4 id="traffic" className="card-title mb-0">
+                  Welfare
+                </h4>
                 <div className="small text-medium-emphasis">Welfare</div>
-              </CCardBody>
-            </Col>
-            <Col span={16}>
-              <CCardBody>
-                <Row gutter={[16,16]} justify="end">
+              </Col>
+              <Col span={16}>
+                <Row gutter={[16, 16]} justify="end">
                   <Col>
                     <Button icon={<DeleteOutlined />} size="large" />
                   </Col>
@@ -99,36 +99,27 @@ class Welfare extends React.Component {
                     <Button icon={<FilePdfOutlined />} size="large" />
                   </Col>
                   <Col>
-                    <Button type="text" danger size="large">+ Welfare</Button>
+                    <Button type="text" danger size="large">
+                      + Welfare
+                    </Button>
                   </Col>
                 </Row>
-              </CCardBody>
-            </Col>
-          </Row>
+              </Col>
+            </Row>
+          </CCardBody>
         </CCard>
-        <CCard className="mb-4">
-          <Form layout="vertical">
-            <Row>
-              <Col span={6}>
-                <CCardBody>
+
+        <Form layout="vertical">
+          <CCard className="mb-4">
+            <CCardBody>
+              <Row>
+                <Col span={8}>
                   <Form.Item label="Name">
-                    <Input placeholder='Name' />
+                    <Input placeholder="Name" />
                   </Form.Item>
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
-
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
-
-                </CCardBody>
-              </Col>
-              <Col span={6}>
-                <CCardBody>
-                  <Row gutter={[16, 16]}>
+                </Col>
+                <Col span={16}>
+                  <Row gutter={[16, 16]} justify="end">
                     <Col>
                       <Button>Cancel</Button>
                     </Col>
@@ -136,13 +127,14 @@ class Welfare extends React.Component {
                       <Button type="primary">Search</Button>
                     </Col>
                   </Row>
-                </CCardBody>
-              </Col>
-            </Row>
-          </Form>
-        </CCard>
-        <Row justify="space-between">
-          <Col span={16} className="mb-4" >
+                </Col>
+              </Row>
+            </CCardBody>
+          </CCard>
+        </Form>
+
+        <Row>
+          <Col span={16} className="mb-4">
             <Row gutter={16}>
               <Col>
                 <Button ghost>กองทุน</Button>
@@ -156,33 +148,27 @@ class Welfare extends React.Component {
             </Row>
           </Col>
           <Col span={8}>
-            <Row gutter={16} justify='end'>
+            <Row gutter={16} justify="end">
               <Col>
                 <Button ghost>+ เพิ่มกองทุน</Button>
               </Col>
             </Row>
           </Col>
         </Row>
-        <CCard className="mb-4">
-          <Row>
-            <Col span={8}>
-              <CCardBody>
-                <h6 id="traffic" className="card-title mb-0">กองทุน</h6>
-              </CCardBody>
-            </Col>
-            <Col span={16}>
-              <CCardBody>
-                <Row justify="end">
 
-                </Row>
-              </CCardBody>
-            </Col>
-          </Row>
+        <CCard>
           <CCardBody>
-            <Table
-              rowSelection={rowSelection}
-              columns={columns}
-              dataSource={data} />
+            <Row>
+              <h6 id="traffic" className="card-title mb-0">
+                กองทุน
+              </h6>
+            </Row>
+            <br></br>
+            <Row>
+              <Col span={24}>
+                <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+              </Col>
+            </Row>
           </CCardBody>
         </CCard>
       </>

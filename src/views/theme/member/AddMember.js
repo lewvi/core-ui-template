@@ -3,7 +3,7 @@ import React, { useEffect, useState, createRef } from 'react'
 import classNames from 'classnames'
 import { CCard, CCardBody } from '@coreui/react'
 import { Button, Input, Form, Select, Row, Col, Space, Avatar, DatePicker } from 'antd'
-import { UserOutlined } from '@ant-design/icons'
+import { UserOutlined, LeftOutlined } from '@ant-design/icons'
 import { Footer } from 'antd/lib/layout/layout'
 
 class AddMember extends React.Component {
@@ -12,22 +12,34 @@ class AddMember extends React.Component {
       <>
         <CCard>
           <CCardBody>
-            <h4 id="traffic" className="card-title mb-0">
-              Member
-            </h4>
-            <div className="small text-medium-emphasis">Member</div>
+            <Row gutter={16} align="middle">
+              <Col>
+                <Avatar
+                  style={{ backgroundColor: '#A92928' }}
+                  size={40}
+                  onClick={() => window.history.back()}
+                  /* icon={<LeftOutlined />} */
+                />
+              </Col>
+              <Col>
+                <h4 id="traffic" className="card-title mb-0">
+                  Member
+                </h4>
+                <div className="small text-medium-emphasis">Member</div>
+              </Col>
+            </Row>
           </CCardBody>
         </CCard>
 
         {/*  --------------- Form ------------- */}
         <Form layout="vertical">
-          <CCard className="mb-4">
+          <CCard>
             <CCardBody>
-              <Row gutter={[16, 16]}>
+              <Row gutter={16}>
                 <Col span={8}>
-                    <Row justify='center'>
-                        <Avatar size={250} icon={<UserOutlined />} />
-                    </Row>
+                  <Row justify="center">
+                    <Avatar size={250} icon={<UserOutlined />} />
+                  </Row>
                 </Col>
                 <Col span={16}>
                   <Row>
@@ -57,7 +69,6 @@ class AddMember extends React.Component {
                         <Input />
                       </Form.Item>
                     </Col>
-
                     <Col span={12}>
                       <Form.Item label="ที่อยู่ :">
                         <Input />
@@ -75,7 +86,7 @@ class AddMember extends React.Component {
                   </Row>
 
                   <Row>
-                    <h6>ข้อมูลที่เกี่ยวข้อง</h6>
+                    <p>ข้อมูลที่เกี่ยวข้อง</p>
                   </Row>
                   <Row gutter={16}>
                     <Col span={12}>
@@ -101,19 +112,18 @@ class AddMember extends React.Component {
                       </Form.Item>
                     </Col>
                   </Row>
-                </Col>
-              </Row>
 
-              <Footer>
-              <Row gutter={[16, 16]} justify='end'>
-                <Col>
-                  <Button>Cancel</Button>
-                </Col>
-                <Col>
-                  <Button type="primary">Save</Button>
+                  <Row gutter={16} justify='end'>
+                    <Col>
+                      <Button>Cancel</Button>
+                    </Col>
+                    <Col>
+                      <Button type="primary">Save</Button>
+                    </Col>
+                  </Row>
                 </Col>
               </Row>
-              </Footer>
+              <Footer/>
             </CCardBody>
           </CCard>
         </Form>
@@ -123,5 +133,3 @@ class AddMember extends React.Component {
 }
 
 export default AddMember
-
-
