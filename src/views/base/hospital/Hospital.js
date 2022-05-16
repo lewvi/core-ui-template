@@ -114,7 +114,7 @@ class Hospital extends React.Component {
                     <Button icon={<FilePdfOutlined />} size="large" />
                   </Col>
                   <Col>
-                    <Link to="#">
+                    <Link to="/base/hospital/AddHospital">
                       <Button type="text" danger size="large">
                         + Hospital
                       </Button>

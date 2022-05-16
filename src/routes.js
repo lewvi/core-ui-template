@@ -14,13 +14,18 @@ const Skill = React.lazy(() => import('./views/base/skill/Skill'))
 const AddSkill = React.lazy(() => import('./views/base/skill/AddSkill'))
 const jobApplication = React.lazy(() => import('./views/base/jobApplication/JobApplication'))
 const AddjobApplication = React.lazy(() => import('./views/base/jobApplication/AddJobApplication'))
-//const Document = React.lazy(() => import('./views/base/document/Document'))
 const Document = React.lazy(() => import('./views/base/document/Document'))
+const AddDocument = React.lazy(() => import('./views/base/document/AddDocument'))
 const Hospital = React.lazy(() => import('./views/base/hospital/Hospital'))
+const AddHospital = React.lazy(() => import('./views/base/hospital/AddHospital'))
 const Welfare = React.lazy(() => import('./views/base/welfare/Welfare'))
+const AddWelfare = React.lazy(() => import('./views/base/welfare/AddWelfare'))
 const News = React.lazy(() => import('./views/base/news/News'))
+const AddNews = React.lazy(() => import('./views/base/news/AddNews'))
 const Report = React.lazy(() => import('./views/base/report/Report'))
+//const AddReport = React.lazy(() => import('./views/base/report/AddReport'))
 const useManagement = React.lazy(() => import('./views/base/userManage/UserManage'))
+const AddUserManagement = React.lazy(() => import('./views/base/userManage/AddUserManage'))
 const Setting = React.lazy(() => import('./views/base/setting/Setting'))
 
 const Spinners = React.lazy(() => import('./views/base/spinners/Spinners'))
@@ -77,11 +82,16 @@ const routes = [
   { path: '/base/jobApplication', name: 'Job application', element: jobApplication },
   { path: '/base/AddjobApplication', name: 'Add Job application', element: AddjobApplication },
   { path: '/base/document', name: 'Document', element: Document },
+  { path: '/base/document/AddDocument', name: 'Add Document', element: AddDocument },
   { path: '/base/hospital', name: 'Hospital', element: Hospital },
+  { path: '/base/hospital/AddHospital', name: 'Add Hospital', element: AddHospital },
   { path: '/base/welfare', name: 'Welfare', element: Welfare },
+  { path: '/base/welfare/AddWelfare', name: 'Add Welfare', element: AddWelfare },
   { path: '/base/news', name: 'News', element: News },
+  { path: '/base/news/AddNews', name: 'Add News', element: AddNews },
   { path: '/base/report', name: 'Report', element: Report},
   { path: '/base/useManagement', name: 'User management', element: useManagement},
+  { path: '/base/useManagement/AddUserManage', name: 'Add User management', element: AddUserManagement},
   { path: '/base/setting', name: 'Setting', element: Setting},
 
   { path: '/base/spinners', name: 'Spinners', element: Spinners },

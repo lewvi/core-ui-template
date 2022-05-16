@@ -99,9 +99,11 @@ class Welfare extends React.Component {
                     <Button icon={<FilePdfOutlined />} size="large" />
                   </Col>
                   <Col>
-                    <Button type="text" danger size="large">
-                      + Welfare
-                    </Button>
+                    <Link to="/base/welfare/AddWelfare">
+                      <Button type="text" danger size="large">
+                        + Welfare
+                      </Button>
+                    </Link>
                   </Col>
                 </Row>
               </Col>

@@ -90,9 +90,12 @@ class News extends React.Component {
                     <Button icon={<DeleteOutlined />} size="large" />
                   </Col>
                   <Col>
+                  <Link to='/base/news/AddNews'>
                     <Button type="text" danger size="large">
                       + News
                     </Button>
+                  </Link>
+
                   </Col>
                 </Row>
               </Col>

@@ -88,7 +88,7 @@ class Document extends React.Component {
               <Col span={16}>
                 <Row gutter={[16, 16]} justify="end">
                   <Col>
-                    <Link to="#">
+                    <Link to="/base/document/AddDocument">
                       <Button type="text" danger size="large">
                         + Document
                       </Button>

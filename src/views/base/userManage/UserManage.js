@@ -98,7 +98,7 @@ class UserManage extends React.Component {
                     <Button icon={<FileExcelOutlined />} size="large" />
                   </Col>
                   <Col>
-                    <Link to="#">
+                    <Link to="/base/useManagement/AddUserManage">
                       <Button type="text" danger size="large">
                         + User Manage
                       </Button>

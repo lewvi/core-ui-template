@@ -2,9 +2,10 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useState, createRef } from 'react'
 import classNames from 'classnames'
 import { CCard, CCardBody } from '@coreui/react'
-import { Button, Input, Form, Row, Col, DatePicker, Upload,TimePicker } from 'antd'
+import { Button, Input, Form, Row, Col, DatePicker, Upload,TimePicker,Avatar } from 'antd'
 import { FormOutlined, InboxOutlined,LinkOutlined } from '@ant-design/icons'
 import { Footer } from 'antd/lib/layout/layout'
+import { UserOutlined, LeftOutlined } from '@ant-design/icons'
 
 const { Dragger } = Upload;
 
@@ -12,17 +13,25 @@ class AddRecruit extends React.Component {
   render() {
     return (
       <>
-        <CCard className="mb-4">
-          <Row justify="space-between">
-            <Col span={8}>
-              <CCardBody>
+        <CCard>
+          <CCardBody>
+            <Row gutter={16} align="middle">
+              <Col>
+                <Avatar
+                  style={{ backgroundColor: '#A92928' }}
+                  size={40}
+                  onClick={() => window.history.back()}
+                  icon={<LeftOutlined />}
+                />
+              </Col>
+              <Col>
                 <h4 id="traffic" className="card-title mb-0">
-                  Recruit
+                Recruit
                 </h4>
                 <div className="small text-medium-emphasis">Recruit</div>
-              </CCardBody>
-            </Col>
-          </Row>
+              </Col>
+            </Row>
+          </CCardBody>
         </CCard>
 
         <Form layout="vertical">
