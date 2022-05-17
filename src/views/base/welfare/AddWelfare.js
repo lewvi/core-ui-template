@@ -10,7 +10,7 @@ class AddWelfare extends React.Component {
   render() {
     return (
       <>
-        <CCard>
+        <CCard className='mb-4'>
           <CCardBody>
             <Row gutter={16} align="middle">
               <Col>
@@ -23,13 +23,47 @@ class AddWelfare extends React.Component {
               </Col>
               <Col>
                 <h4 id="traffic" className="card-title mb-0">
-                  Member
+                Welfare
                 </h4>
-                <div className="small text-medium-emphasis">Member</div>
+                <div className="small text-medium-emphasis">Welfare</div>
               </Col>
             </Row>
           </CCardBody>
         </CCard>
+
+<Form layout='vertical'>
+  <CCard>
+          <CCardBody>
+            <Row justify='center'>
+              <Col span={12}>
+                <Row>
+                  <p>Welfare</p>
+                </Row>
+                <Row gutter={16}>
+                  <Col span={12}>
+                    <Form.Item label='Name'>
+                      <Select placeholder='Name'/>
+                    </Form.Item>
+                    <Form.Item label='Schedule'>
+                      <Input placeholder='Schedule'/>
+                    </Form.Item>
+                  </Col>
+                  <Col span={12}>
+                    <Form.Item label='Quantity'>
+                      <Input placeholder='Quantity'/>
+                    </Form.Item>
+                    <Form.Item label='Contact'>
+                      <Input placeholder='Contact'/>
+                    </Form.Item>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+
+          </CCardBody>
+        </CCard>
+        </Form>
+
       </>
     )
   }

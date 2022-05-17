@@ -2,12 +2,14 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useState, createRef } from 'react'
 import classNames from 'classnames'
 import { CCard, CCardBody } from '@coreui/react'
-import { Button, Input, Form, Select, Row, Col, Space, Avatar, DatePicker } from 'antd'
+import { Button, Input, Form, Select, Row, Col, Card, Avatar, DatePicker } from 'antd'
 import { UserOutlined, LeftOutlined } from '@ant-design/icons'
 import { Footer } from 'antd/lib/layout/layout'
 
+
 class AddUserManage extends React.Component {
   render() {
+
     return (
       <>
         <CCard className="mb-4">
@@ -31,7 +33,7 @@ class AddUserManage extends React.Component {
           </CCardBody>
         </CCard>
 
-        <Form layout="vertical">
+        <Form layout="vertical" >
           <CCard>
             <CCardBody>
               <Row justify="center">
@@ -41,16 +43,13 @@ class AddUserManage extends React.Component {
                   </Row>
                   <Row gutter={16}>
                     <Col span={12}>
-                      <Form.Item label="User ID">
+                      <Form.Item label="User ID" rules={[{ required: true, message: 'Please input your username!' }]}>
                         <Input />
                       </Form.Item>
                       <Form.Item label="First name">
                         <Input />
                       </Form.Item>
                       <Form.Item label="Email">
-                        <Input />
-                      </Form.Item>
-                      <Form.Item label="Role">
                         <Input />
                       </Form.Item>
                     </Col>
@@ -67,19 +66,37 @@ class AddUserManage extends React.Component {
                     </Col>
                   </Row>
                   <Row>
+                    <Col span={24}>
+                      <Form.Item label="Role">
+                        <Select />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+                  <Row>
                     <p>Reset password</p>
                   </Row>
 
-                  <Row gutter={16}>
-                    <Col span={12}>
-                      <Form.Item label="New Password">
-                        <Input />
-                      </Form.Item>
+                  <Card>
+                    <Row gutter={16}>
+                      <Col span={12}>
+                        <Form.Item label="New Password">
+                          <Input />
+                        </Form.Item>
+                      </Col>
+                      <Col span={12}>
+                        <Form.Item label="Confirm Password">
+                          <Input />
+                        </Form.Item>
+                      </Col>
+                    </Row>
+                  </Card>
+                  <br></br>
+                  <Row gutter={16} justify='end'>
+                    <Col>
+                      <Button>Cancel</Button>
                     </Col>
-                    <Col span={12}>
-                      <Form.Item label="Confirm Password">
-                        <Input />
-                      </Form.Item>
+                    <Col>
+                      <Button type="primary">Save</Button>
                     </Col>
                   </Row>
                 </Col>
